@@ -1,0 +1,159 @@
+/* General Styles */
+.home-container {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  background-image: url('https://files.oaiusercontent.com/file-2Ts3N9iKMY1vLppiuQqxzG?se=2025-01-26T00%3A08%3A08Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2e421032-89d5-49e0-b966-bdf166de2938.webp&sig=M73jPVvqPyAYG1sgC8oepSRvczMO7%2BLzat9B4W%2BDVXc%3D');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 20px;
+  text-align: center;
+  color: #180909;
+  border-radius: 12px;
+  margin-bottom: 60px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+  animation: slideUp 1s ease-out;
+}
+
+/* Hero Section Heading Styles */
+.hero-section h1 {
+  font-size: 80px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #ff6600, #f50000); /* Gradient from orange to red */
+  -webkit-background-clip: text;  /* Clips the gradient to the text */
+  background-clip: text;          /* Clips the gradient to the text */
+  color: transparent;             /* Makes the text color transparent to show the gradient */
+}
+
+/* Hero Section Paragraph Styles */
+.hero-section p {
+  font-size: 35px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height:1.2;
+  background: linear-gradient(45deg, #bacee2, #0352fc); /* Gradient from orange to red */
+  -webkit-background-clip: text;  /* Clips the gradient to the text */
+  background-clip: text;          /* Clips the gradient to the text */
+}
+
+
+.cta-btn {
+  background-color: #ff8a00;
+  color: white;
+  padding: 16px 36px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  letter-spacing: 2px;
+  width: 220px;
+}
+
+.cta-btn:hover {
+  background-color: #f57c00;
+  transform: scale(1.05);
+}
+
+/* About Us Section */
+.about-section {
+ 
+  background-color: #f7f7f7;
+  padding: 60px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 60px;
+}
+
+.about-section h2 {
+  text-align: left;
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.about-section p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.about-section ul {
+  font-size: 20px;
+  color: #555;
+  list-style-type: square;
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+
+.about-section li {
+  margin-bottom: 12px;
+}
+
+/* Mission Section */
+.mission-section {
+  background-color: #e0f7fa;
+  padding: 60px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mission-section h2 {
+  text-align: left;
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.mission-section p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Button Styles for About Section */
+.about-btn {
+  display: inline-block;
+  background-color: #ff8a00;
+  color: white;
+  padding: 14px 28px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 30px;
+}
+
+.about-btn:hover {
+  background-color: #f57c00;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

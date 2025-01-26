@@ -1,0 +1,32 @@
+.context-container {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+  }
+  
+  .context-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .context-item {
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  .context-item:hover {
+    background-color: #f9f9f9;
+    border-color: #4caf50;
+  }
+  

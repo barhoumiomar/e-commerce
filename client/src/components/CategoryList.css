@@ -1,0 +1,32 @@
+/* CategoryList.css */
+.category-list {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .category-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .category-item {
+    text-decoration: none;
+  }
+  
+  .category-btn {
+    background-color: #FF5722;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-btn:hover {
+    background-color: #E64A19;
+  }
+  

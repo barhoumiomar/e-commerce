@@ -1,0 +1,51 @@
+/* src/components/Profile.css */
+.profile-container {
+    position: relative;
+  }
+  
+  .profile-icon {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .profile-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: rgb(38, 66, 156);
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .profile-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .profile-menu ul li {
+    padding: 10px;
+  }
+  
+  .profile-menu ul li a,
+  .profile-menu ul li button {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .profile-menu ul li a:hover,
+  .profile-menu ul li button:hover {
+    background-color: #f0f0f0;
+  }
+  

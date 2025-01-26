@@ -1,0 +1,55 @@
+.login-register-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .login-register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .toggle-text {
+    color: #007bff;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .toggle-text:hover {
+    text-decoration: underline;
+  }
+  
+  .message {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
