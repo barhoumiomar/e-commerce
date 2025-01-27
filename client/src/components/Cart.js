@@ -7,13 +7,13 @@ import "./Cart.css";
 const Cart = () => {
   const { cart, removeFromCart, clearCart } = useCart();
 
-  // Calculate the total by removing "DT" and parsing the price as a float
+  // Calculate the total price of the cart
   const calculateTotal = () => {
     return cart.reduce((total, item) => {
-      // Remove "DT" and spaces and convert the price string to a float number
-      const price = parseFloat(item.price.replace('DT', '').trim());
+      // Ensure price is a valid number (whether it's a string or a number)
+      const price = typeof item.price === "string" ? parseFloat(item.price.replace("DT", "").trim()) : item.price;
 
-      // Ensure that price is a valid number before adding
+      // Return the accumulated total, ensuring the price is valid
       return total + (isNaN(price) ? 0 : price);
     }, 0);
   };
@@ -31,10 +31,8 @@ const Cart = () => {
                 <img src={item.image} alt={item.name} className="cart-item-image" />
                 <div className="cart-item-info">
                   <p>{item.name}</p>
-                  <p>{item.price}</p>
-                  <button onClick={() => removeFromCart(item.id)}>
-                    Remove
-                  </button>
+                  <p>{item.price} DT</p>
+                  <button onClick={() => removeFromCart(item.id)}>Remove</button>
                 </div>
               </li>
             ))}

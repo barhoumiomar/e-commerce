@@ -14,7 +14,7 @@ const products = [
     description: "A comfortable and responsive wireless mouse for everyday use.",
     category: "Electronics",
     stock: 50,
-    image: "https://source.unsplash.com/400x300/?mouse",
+    image: "https://www.fingers.co.in/secure/api/uploads/products/1713252661_New-angle.png",
   },
   {
     name: "Gaming Keyboard",
@@ -22,7 +22,7 @@ const products = [
     description: "A high-performance gaming keyboard with customizable RGB lighting.",
     category: "Electronics",
     stock: 30,
-    image: "https://source.unsplash.com/400x300/?keyboard",
+    image: "https://static1.howtogeekimages.com/wordpress/wp-content/uploads/2022/04/rgb-lit-gaming-mechanical-keyboard.jpg",
   },
   {
     name: "Running Shoes",
@@ -30,7 +30,7 @@ const products = [
     description: "Lightweight and comfortable running shoes for all terrains.",
     category: "Footwear",
     stock: 100,
-    image: "https://source.unsplash.com/400x300/?shoes",
+    image: "https://pyxis.nymag.com/v1/imgs/a6d/fc0/4da4be21d1741718404660586a5b6a6f3e.jpg",
   },
   {
     name: "Backpack",
@@ -38,7 +38,7 @@ const products = [
     description: "Durable and spacious backpack for daily use or travel.",
     category: "Accessories",
     stock: 70,
-    image: "https://source.unsplash.com/400x300/?backpack",
+    image: "https://m.media-amazon.com/images/I/81WjalMN8mL._AC_UY1000_.jpg",
   },
   {
     name: "Smartwatch",
@@ -46,7 +46,7 @@ const products = [
     description: "Feature-packed smartwatch with fitness tracking and notifications.",
     category: "Electronics",
     stock: 25,
-    image: "https://source.unsplash.com/400x300/?smartwatch",
+    image: "https://i5.walmartimages.com/asr/dda6bc1f-d282-4cf9-ad29-e827222bc4d5.8d402328f4d54e2b9a252879ec51fb79.jpeg",
   },
   {
     name: "Water Bottle",
@@ -54,7 +54,7 @@ const products = [
     description: "Reusable stainless steel water bottle to keep your drinks hot or cold.",
     category: "Accessories",
     stock: 120,
-    image: "https://source.unsplash.com/400x300/?waterbottle",
+    image: "https://monos.com/cdn/shop/products/Kiyo-UVC-Bottle-500ml-Blue-Hour_900x.png?v=1678603856",
   },
   {
     name: "Bluetooth Speaker",
@@ -62,7 +62,7 @@ const products = [
     description: "Compact and portable Bluetooth speaker with excellent sound quality.",
     category: "Electronics",
     stock: 40,
-    image: "https://source.unsplash.com/400x300/?speaker",
+    image: "https://m.media-amazon.com/images/I/718yxonHN8L.jpg",
   },
 ];
 

@@ -1,82 +1,132 @@
+/* CartPage.css */
+
 .cart-page {
-  padding: 30px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
   font-family: Arial, sans-serif;
-  background-color: #fafafa; /* Light background color for better contrast */
-  max-width: 1200px;
-  margin: 40px auto;
-  border-radius: 10px; /* Rounded corners for the page */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a clean effect */
 }
 
-h2 {
-  font-size: 32px;
-  color: #333;
-  margin-bottom: 20px;
+.cart-page h2 {
   text-align: center;
-  font-weight: bold;
+  color: #333;
 }
 
-ul {
-  list-style-type: none;
+.cart-page ul {
+  list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-li {
+.cart-page li {
   display: flex;
   align-items: center;
-  padding: 15px;
+  justify-content: space-between;
   margin-bottom: 20px;
-  background-color: #fff; /* White background for each item */
-  border-radius: 8px; /* Rounded corners for each item */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow around items */
-}
-
-.cart-item-image {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-right: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
   border-radius: 8px;
 }
 
-button {
-  background-color: #f44336; 
-  width: 30px; /* Increased width to make the button easier to interact with */
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
+.cart-item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
   border-radius: 5px;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-  width: 100px;
 }
 
-button:hover {
-  background-color: #d32f2f;
+.cart-item-info {
+  flex: 1;
+  margin-left: 10px;
 }
 
-h3 {
-  font-size: 26px;
-  font-weight: bold;
-  color: #333;
-  margin-top: 20px;
-  text-align: right;
+.cart-item-info p {
+  margin: 5px 0;
+}
+
+.cart-page button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.cart-page button:hover {
+  background-color: #218838;
 }
 
 .checkout-link {
-  display: inline-block;
-  background-color: #28a745;
-  color: white;
-  padding: 10px 20px;
-  font-size: 18px;
-  text-decoration: none;
-  border-radius: 5px;
+  display: block;
   text-align: center;
-  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #007bff;
+  text-decoration: none;
 }
 
 .checkout-link:hover {
-  background-color: #218838;
+  text-decoration: underline;
+}
+
+/* Checkout Section */
+.checkout-page {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.checkout-page h2 {
+  text-align: center;
+  color: #333;
+}
+
+.checkout-page h3 {
+  color: #555;
+  margin-top: 20px;
+}
+
+.checkout-page ul {
+  list-style: none;
+  padding: 0;
+}
+
+.checkout-page li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.checkout-page label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.checkout-page input,
+.checkout-page select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.checkout-page button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.checkout-page button:hover {
+  background-color: #0056b3;
 }

@@ -8,15 +8,16 @@ const CheckoutPage = () => {
   const { cart, clearCart } = useCart();
   const [shippingAddress, setShippingAddress] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
+  const [cardDetails, setCardDetails] = useState({
+    cardNumber: "",
+    expiryDate: "",
+    ownerName: "",
+  });
 
-  // Calculate the total by removing "DT" and parsing the price as a float
-  const totalPrice = cart.reduce(
-    (total, product) => total + parseFloat(product.price.replace("DT", "").trim()),
-    0
-  );
+  const totalPrice = cart.reduce((total, product) => total + Number(product.price), 0);
 
   const handlePlaceOrder = () => {
-    if (!shippingAddress || !paymentMethod) {
+    if (!shippingAddress || !paymentMethod || !cardDetails.cardNumber || !cardDetails.expiryDate || !cardDetails.ownerName) {
       alert("Please fill out all the required fields!");
     } else {
       alert("Order placed successfully!");
@@ -35,7 +36,7 @@ const CheckoutPage = () => {
           <ul>
             {cart.map((product) => (
               <li key={product.id}>
-                <p>{product.name} - {product.price}</p>
+                <p>{product.name} - {product.price} DT</p>
               </li>
             ))}
           </ul>
@@ -49,6 +50,7 @@ const CheckoutPage = () => {
                 value={shippingAddress}
                 onChange={(e) => setShippingAddress(e.target.value)}
                 placeholder="Enter shipping address"
+                required
               />
             </label>
             <label>
@@ -56,12 +58,47 @@ const CheckoutPage = () => {
               <select
                 value={paymentMethod}
                 onChange={(e) => setPaymentMethod(e.target.value)}
+                required
               >
                 <option value="">Select payment method</option>
                 <option value="credit">Credit Card</option>
                 <option value="paypal">PayPal</option>
               </select>
             </label>
+            {paymentMethod === "credit" && (
+              <div className="card-details">
+                <label>
+                  Card Number:
+                  <input
+                    type="text"
+                    value={cardDetails.cardNumber}
+                    onChange={(e) => setCardDetails({ ...cardDetails, cardNumber: e.target.value })}
+                    placeholder="Card Number"
+                    required
+                  />
+                </label>
+                <label>
+                  Expiry Date:
+                  <input
+                    type="text"
+                    value={cardDetails.expiryDate}
+                    onChange={(e) => setCardDetails({ ...cardDetails, expiryDate: e.target.value })}
+                    placeholder="MM/YY"
+                    required
+                  />
+                </label>
+                <label>
+                  Card Owner's Name:
+                  <input
+                    type="text"
+                    value={cardDetails.ownerName}
+                    onChange={(e) => setCardDetails({ ...cardDetails, ownerName: e.target.value })}
+                    placeholder="Owner's Name"
+                    required
+                  />
+                </label>
+              </div>
+            )}
             <button onClick={handlePlaceOrder}>Place Order</button>
           </div>
         </div>
