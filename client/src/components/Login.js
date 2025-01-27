@@ -1,50 +1,60 @@
-import React, { useState } from "react";
-import axios from "axios";
-import './Login.css';
+import React, { useState } from 'react';
+import axios from 'axios';
+import './Login.css'; // Import the CSS file
+
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post("http://localhost:5000/api/users/login", {
-        email,
-        password,
-      });
+    if (email && password) {
+      setLoading(true);
+      
+      try {
+        const response = await axios.post('http://localhost:5000/api/users/login', {
+          email,
+          password,
+        });
 
-      localStorage.setItem("token", response.data.token); // Save the JWT token to localStorage
-      setSuccess("Login successful!");
-      setError(""); // Clear errors
-    } catch (err) {
-      setError(err.response?.data?.message || "Login failed.");
-      setSuccess(""); // Clear success messages
+        // Save JWT token to localStorage
+        localStorage.setItem('token', response.data.token);
+        setLoading(false);
+        // Redirect user to the home page or wherever you want after successful login
+        window.location.href = '/'; // Example: Redirect to homepage
+      } catch (err) {
+        setLoading(false);
+        setError(err.response?.data?.message || 'Login failed');
+      }
+    } else {
+      setError('Please fill in both fields');
     }
   };
 
   return (
-    <form onSubmit={handleLogin}>
+    <div className="login-container">
       <h2>Login</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {success && <p style={{ color: "green" }}>{success}</p>}
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <button type="submit">Login</button>
-    </form>
+      {error && <div className="error">{error}</div>}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit" disabled={loading}>
+          {loading ? 'Logging in...' : 'Login'}
+        </button>
+      </form>
+    </div>
   );
 };
 

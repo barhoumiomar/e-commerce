@@ -1,32 +1,44 @@
 .context-container {
-    padding: 20px;
-    margin: 20px auto;
-    background-color: #f1f1f1;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-  }
-  
-  .context-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .context-item {
-    padding: 10px 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #555;
-  }
-  
-  .context-item:hover {
-    background-color: #f9f9f9;
-    border-color: #4caf50;
-  }
-  
+  padding: 30px;
+  margin: 20px auto;
+  background-color: #f9f9f9; /* Lightened background */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+  max-width: 900px;
+  font-family: 'Arial', sans-serif; /* Adding a cleaner font */
+}
+
+.context-title {
+  font-size: 32px;
+  font-weight: 600; /* Slightly lighter weight for modern feel */
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center; /* Center align the title */
+}
+
+.context-item {
+  padding: 15px 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #555;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.context-item:hover {
+  background-color: #f1f1f1; /* Slightly darker hover color */
+  border-color: #4caf50; /* Green border on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.context-item p {
+  margin: 0;
+  padding: 0;
+}
+
+.context-item:last-child {
+  margin-bottom: 0; /* Remove margin from last item */
+}

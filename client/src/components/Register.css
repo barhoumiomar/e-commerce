@@ -1,25 +1,96 @@
-/* Styles for register form */
+/* Container for register form */
 .register-container {
-  width: 300px;
-  margin: auto;
+  width: 100%;
+  max-width: 400px; /* Limit the width for larger screens */
+  margin: 50px auto;
+  padding: 30px; /* Increased padding for more breathing space */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
+  font-family: 'Arial', sans-serif;
 }
 
+/* Error message styling */
 .error {
   color: red;
   text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
 }
 
+/* Success message styling */
+.success {
+  color: green;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+/* Input fields styling */
 input {
   width: 100%;
-  padding: 8px;
-  margin: 10px 0;
+  padding: 12px;
+  margin-bottom: 15px; /* Reduced margin slightly for more compact layout */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f9f9f9; /* Light background for input fields */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Focus effect for input fields */
+input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+  outline: none;
+}
+
+/* Placeholder text styling */
+input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Button styling */
 button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #4CAF50;
   color: white;
+  font-size: 1rem;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+/* Button active state (pressed effect) */
+button:active {
+  transform: translateY(2px);
+}
+
+/* Title styling */
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Optional: Add a subtle animation to the container */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -1,27 +1,27 @@
-// src/components/CheckoutPage.js
-import React, { useState } from "react";
-import { useCart } from "../context/CartContext"; // Import the cart context
-import { Link } from "react-router-dom";
-import "./CheckoutPage.css";
+import React from 'react';
+import { useCart } from '../context/CartContext'; 
+import { Link } from 'react-router-dom';
+import './CheckoutPage.css'; // For styling
 
 const CheckoutPage = () => {
-  const { cart, clearCart } = useCart();
-  const [shippingAddress, setShippingAddress] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("");
-  const [cardDetails, setCardDetails] = useState({
-    cardNumber: "",
-    expiryDate: "",
-    ownerName: "",
-  });
+  const { cart, removeFromCart, updateQuantity } = useCart();
 
-  const totalPrice = cart.reduce((total, product) => total + Number(product.price), 0);
+  // Calculate the total price
+  const totalPrice = cart.reduce((total, product) => total + product.price * product.quantity, 0);
 
-  const handlePlaceOrder = () => {
-    if (!shippingAddress || !paymentMethod || !cardDetails.cardNumber || !cardDetails.expiryDate || !cardDetails.ownerName) {
-      alert("Please fill out all the required fields!");
-    } else {
-      alert("Order placed successfully!");
-      clearCart(); // Clear the cart after placing the order
+  // Calculate total available stock across all items
+  const totalStock = cart.reduce((total, product) => total + product.stock, 0);
+
+  // Handle quantity change during checkout
+  const handleIncrement = (product) => {
+    if (product.quantity < product.stock) {
+      updateQuantity(product.id, product.quantity + 1);
+    }
+  };
+
+  const handleDecrement = (product) => {
+    if (product.quantity > 1) {
+      updateQuantity(product.id, product.quantity - 1);
     }
   };
 
@@ -29,80 +29,38 @@ const CheckoutPage = () => {
     <div className="checkout-page">
       <h2>Checkout</h2>
       {cart.length === 0 ? (
-        <p>Your cart is empty. <Link to="/cart">Go back to cart</Link></p>
+        <p>Your cart is empty. Please add some items to your cart before proceeding to checkout.</p>
       ) : (
-        <div>
-          <h3>Order Summary</h3>
-          <ul>
-            {cart.map((product) => (
-              <li key={product.id}>
-                <p>{product.name} - {product.price} DT</p>
-              </li>
-            ))}
-          </ul>
-          <h4>Total: {totalPrice} DT</h4>
+        <ul>
+          {cart.map((product) => (
+            <li key={product.id} className="checkout-item">
+              <img src={product.image} alt={product.name} className="checkout-item-image" />
+              <p>{product.name} - {product.price} DT</p>
 
-          <div>
-            <label>
-              Shipping Address:
-              <input
-                type="text"
-                value={shippingAddress}
-                onChange={(e) => setShippingAddress(e.target.value)}
-                placeholder="Enter shipping address"
-                required
-              />
-            </label>
-            <label>
-              Payment Method:
-              <select
-                value={paymentMethod}
-                onChange={(e) => setPaymentMethod(e.target.value)}
-                required
-              >
-                <option value="">Select payment method</option>
-                <option value="credit">Credit Card</option>
-                <option value="paypal">PayPal</option>
-              </select>
-            </label>
-            {paymentMethod === "credit" && (
-              <div className="card-details">
-                <label>
-                  Card Number:
-                  <input
-                    type="text"
-                    value={cardDetails.cardNumber}
-                    onChange={(e) => setCardDetails({ ...cardDetails, cardNumber: e.target.value })}
-                    placeholder="Card Number"
-                    required
-                  />
-                </label>
-                <label>
-                  Expiry Date:
-                  <input
-                    type="text"
-                    value={cardDetails.expiryDate}
-                    onChange={(e) => setCardDetails({ ...cardDetails, expiryDate: e.target.value })}
-                    placeholder="MM/YY"
-                    required
-                  />
-                </label>
-                <label>
-                  Card Owner's Name:
-                  <input
-                    type="text"
-                    value={cardDetails.ownerName}
-                    onChange={(e) => setCardDetails({ ...cardDetails, ownerName: e.target.value })}
-                    placeholder="Owner's Name"
-                    required
-                  />
-                </label>
+              {/* Quantity controls */}
+              <div className="quantity-controls">
+                <button onClick={() => handleDecrement(product)}>-</button>
+                <span>{product.quantity}</span>
+                <button onClick={() => handleIncrement(product)}>+</button>
               </div>
-            )}
-            <button onClick={handlePlaceOrder}>Place Order</button>
-          </div>
-        </div>
+
+              <p>Stock available: {product.stock}</p> {/* Display stock available */}
+
+              <button onClick={() => removeFromCart(product.id)}>Remove</button>
+            </li>
+          ))}
+        </ul>
       )}
+
+      <h3>Total: {totalPrice} DT</h3>
+
+      {/* Display total stock available in the cart */}
+      <h4>Total Stock Available in Cart: {totalStock}</h4>
+
+      <div className="checkout-actions">
+        <button className="checkout-button">Proceed with Payment</button>
+        <Link to="/cart" className="back-to-cart">Back to Cart</Link>
+      </div>
     </div>
   );
 };
